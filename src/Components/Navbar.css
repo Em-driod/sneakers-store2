@@ -1,0 +1,18 @@
+.menu-icon {  
+    display: none; /* Hide on larger screens */  
+  }  
+  
+  @media (max-width: 768px) {  
+    .menu-icon {  
+      display: block; /* Show on smaller screens */  
+    }  
+  
+    nav ul {  
+      display: none; /* Hide the menu by default on small screens */  
+      flex-direction: column;  
+    }  
+  
+    nav ul.show {  
+      display: flex; /* Show when toggled */  
+    }  
+  }
