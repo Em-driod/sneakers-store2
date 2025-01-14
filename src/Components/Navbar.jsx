@@ -112,7 +112,7 @@ export default function TopNavBar() {
             color: "inherit",  
           }}  
         >  
-          Shop Now  
+          Shop dsf
         </Link>  
       </motion.button>  
     </motion.nav>  
