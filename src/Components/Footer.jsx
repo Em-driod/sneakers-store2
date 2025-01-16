@@ -3,129 +3,33 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/f
 import { motion } from "framer-motion";
 
 const Footer = () => {
-  const styles = {
-    footer: {
-      backgroundColor: "#1a202c",
-      color: "#e2e8f0",
-      padding: "3rem 1rem",
-    },
-    container: {
-      display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-      gap: "2rem",
-      maxWidth: "1200px",
-      margin: "0 auto",
-    },
-    section: {
-      marginBottom: "1rem",
-    },
-    heading: {
-      fontSize: "1.5rem",
-      fontWeight: "bold",
-      color: "#fff",
-    },
-    text: {
-      marginTop: "1rem",
-      color: "#cbd5e0",
-      fontSize: "0.9rem",
-    },
-    socialIcons: {
-      display: "flex",
-      gap: "1rem",
-      marginTop: "1rem",
-    },
-    socialIcon: {
-      backgroundColor: "#2d3748",
-      padding: "0.5rem",
-      borderRadius: "50%",
-      color: "#e2e8f0",
-      fontSize: "1.2rem",
-      cursor: "pointer",
-      transition: "background-color 0.3s ease",
-    },
-    linkList: {
-      marginTop: "1rem",
-      listStyle: "none",
-      padding: 0,
-    },
-    linkItem: {
-      marginBottom: "0.5rem",
-    },
-    link: {
-      color: "#cbd5e0",
-      textDecoration: "none",
-      transition: "color 0.3s ease",
-    },
-    linkHover: {
-      color: "#fff",
-    },
-    form: {
-      marginTop: "1rem",
-    },
-    input: {
-      width: "100%",
-      padding: "0.5rem",
-      borderRadius: "4px",
-      backgroundColor: "#2d3748",
-      color: "#e2e8f0",
-      border: "none",
-      marginBottom: "1rem",
-    },
-    button: {
-      width: "100%",
-      padding: "0.5rem",
-      borderRadius: "4px",
-      backgroundColor: "#3182ce",
-      color: "#fff",
-      border: "none",
-      cursor: "pointer",
-      transition: "background-color 0.3s ease",
-    },
-    bottomText: {
-      textAlign: "center",
-      marginTop: "2rem",
-      borderTop: "1px solid #4a5568",
-      paddingTop: "1rem",
-      fontSize: "0.85rem",
-      color: "#a0aec0",
-    },
-  };
-
   return (
-    <footer style={styles.footer}>
-      <div style={styles.container}>
+    <footer className="bg-gray-800 text-gray-200 py-12 px-4 overflow-hidden">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
         {/* Company Info */}
-        <div style={styles.section}>
-          <h2 style={styles.heading}>SneakerHub</h2>
-          <p style={styles.text}>
+        <div>
+          <h2 className="text-2xl font-bold text-white">SneakerHub</h2>
+          <p className="mt-4 text-sm text-gray-400">
             Your go-to destination for premium sneakers and accessories.
           </p>
-          <div style={styles.socialIcons}>
+          <div className="flex gap-4 mt-4">
             <div
-              style={styles.socialIcon}
-              onMouseOver={(e) => (e.target.style.backgroundColor = "#4a5568")}
-              onMouseOut={(e) => (e.target.style.backgroundColor = "#2d3748")}
+              className="bg-gray-700 p-3 rounded-full text-xl text-gray-200 cursor-pointer transition duration-300 hover:bg-gray-600"
             >
               <FaFacebookF />
             </div>
             <div
-              style={styles.socialIcon}
-              onMouseOver={(e) => (e.target.style.backgroundColor = "#4a5568")}
-              onMouseOut={(e) => (e.target.style.backgroundColor = "#2d3748")}
+              className="bg-gray-700 p-3 rounded-full text-xl text-gray-200 cursor-pointer transition duration-300 hover:bg-gray-600"
             >
               <FaTwitter />
             </div>
             <div
-              style={styles.socialIcon}
-              onMouseOver={(e) => (e.target.style.backgroundColor = "#4a5568")}
-              onMouseOut={(e) => (e.target.style.backgroundColor = "#2d3748")}
+              className="bg-gray-700 p-3 rounded-full text-xl text-gray-200 cursor-pointer transition duration-300 hover:bg-gray-600"
             >
               <FaInstagram />
             </div>
             <div
-              style={styles.socialIcon}
-              onMouseOver={(e) => (e.target.style.backgroundColor = "#4a5568")}
-              onMouseOut={(e) => (e.target.style.backgroundColor = "#2d3748")}
+              className="bg-gray-700 p-3 rounded-full text-xl text-gray-200 cursor-pointer transition duration-300 hover:bg-gray-600"
             >
               <FaLinkedinIn />
             </div>
@@ -133,45 +37,37 @@ const Footer = () => {
         </div>
 
         {/* Navigation Links */}
-        <div style={styles.section}>
-          <h3 style={styles.heading}>Quick Links</h3>
-          <ul style={styles.linkList}>
-            <li style={styles.linkItem}>
+        <div>
+          <h3 className="text-xl font-semibold text-white">Quick Links</h3>
+          <ul className="mt-4 space-y-2">
+            <li>
               <a
                 href="/about"
-                style={styles.link}
-                onMouseOver={(e) => (e.target.style.color = "#fff")}
-                onMouseOut={(e) => (e.target.style.color = "#cbd5e0")}
+                className="text-sm text-gray-400 hover:text-white transition duration-300"
               >
                 About Us
               </a>
             </li>
-            <li style={styles.linkItem}>
+            <li>
               <a
                 href="/products"
-                style={styles.link}
-                onMouseOver={(e) => (e.target.style.color = "#fff")}
-                onMouseOut={(e) => (e.target.style.color = "#cbd5e0")}
+                className="text-sm text-gray-400 hover:text-white transition duration-300"
               >
                 Products
               </a>
             </li>
-            <li style={styles.linkItem}>
+            <li>
               <a
                 href="/contact"
-                style={styles.link}
-                onMouseOver={(e) => (e.target.style.color = "#fff")}
-                onMouseOut={(e) => (e.target.style.color = "#cbd5e0")}
+                className="text-sm text-gray-400 hover:text-white transition duration-300"
               >
                 Contact Us
               </a>
             </li>
-            <li style={styles.linkItem}>
+            <li>
               <a
                 href="/faq"
-                style={styles.link}
-                onMouseOver={(e) => (e.target.style.color = "#fff")}
-                onMouseOut={(e) => (e.target.style.color = "#cbd5e0")}
+                className="text-sm text-gray-400 hover:text-white transition duration-300"
               >
                 FAQ
               </a>
@@ -180,25 +76,29 @@ const Footer = () => {
         </div>
 
         {/* Contact Info */}
-        <div style={styles.section}>
-          <h3 style={styles.heading}>Contact Us</h3>
-          <p style={styles.text}>Address: No 8 jooro Street,asadam</p>
-          <p style={styles.text}>Email: @Emmanuelsneakerhub.com</p>
-          <p style={styles.text}>Phone: +234-7016969298</p>
+        <div>
+          <h3 className="text-xl font-semibold text-white">Contact Us</h3>
+          <p className="mt-4 text-sm text-gray-400">Address: No 8 Jooro Street, Asadam</p>
+          <p className="mt-2 text-sm text-gray-400">Email: @Emmanuelsneakerhub.com</p>
+          <p className="mt-2 text-sm text-gray-400">Phone: +234-7016969298</p>
         </div>
 
         {/* Newsletter */}
-        <div style={styles.section}>
-          <h3 style={styles.heading}>Newsletter</h3>
-          <p style={styles.text}>
+        <div>
+          <h3 className="text-xl font-semibold text-white">Newsletter</h3>
+          <p className="mt-4 text-sm text-gray-400">
             Subscribe to our newsletter to stay updated on the latest trends and offers.
           </p>
-          <form style={styles.form}>
-            <input type="email" placeholder="Enter your email" style={styles.input} />
+          <form className="mt-4">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="w-full p-3 bg-gray-700 text-gray-200 rounded-md border-none focus:ring-2 focus:ring-blue-500"
+            />
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              style={styles.button}
+              className="w-full mt-4 p-3 bg-blue-600 text-white rounded-md cursor-pointer transition duration-300 hover:bg-blue-500"
             >
               Subscribe
             </motion.button>
@@ -206,7 +106,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <p style={styles.bottomText}>
+      <p className="mt-8 text-center text-sm text-gray-400 border-t border-gray-600 pt-4">
         © {new Date().getFullYear()} SneakerHub. All rights reserved.
       </p>
     </footer>
@@ -214,4 +114,5 @@ const Footer = () => {
 };
 
 export default Footer;
+
 

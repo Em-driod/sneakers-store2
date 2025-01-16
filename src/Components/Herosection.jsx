@@ -34,28 +34,12 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <motion.div
-      style={{
-        position: "relative",
-        width: "100vw",
-        height: "100vh",
-        overflow: "hidden",
-        left: 0,
-      }}
-    >
+    <motion.div className="relative w-screen h-screen overflow-hidden">
       {images.map((image, index) => (
         <motion.div
           key={index}
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            backgroundImage: `url(${image.src})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
+          className="absolute top-0 left-0 w-full h-full bg-cover bg-center"
+          style={{ backgroundImage: `url(${image.src})` }}
           animate={{
             opacity: currentImageIndex === index ? 1 : 0,
           }}
@@ -64,29 +48,9 @@ export default function HeroSection() {
             ease: "easeInOut",
           }}
         >
-          <motion.div
-            style={{
-              position: "absolute",
-              inset: 0,
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              textAlign: "center",
-              color: "#fff",
-              backgroundColor: "rgba(0, 0, 0, 0.7)",
-              padding: "20px",
-            }}
-          >
+          <motion.div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white bg-black bg-opacity-70 px-6 py-8">
             <motion.h1
-              style={{
-                fontSize: "3rem",
-                fontWeight: "bold",
-                marginBottom: "10px",
-                textTransform: "uppercase",
-                letterSpacing: "2px",
-                textShadow: "2px 2px 8px rgba(0, 0, 0, 0.6)",
-              }}
+              className="text-4xl font-bold mb-2 tracking-wide uppercase sm:text-3xl md:text-4xl lg:text-5xl"
               initial={{ y: "-100%", opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{
@@ -99,12 +63,7 @@ export default function HeroSection() {
             </motion.h1>
 
             <motion.p
-              style={{
-                fontSize: "1.4rem",
-                fontStyle: "italic",
-                marginTop: "10px",
-                textShadow: "1px 1px 5px rgba(0, 0, 0, 0.4)",
-              }}
+              className="text-xl italic mt-3 sm:text-lg md:text-xl lg:text-2xl"
               initial={{ y: "100%", opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{
@@ -117,16 +76,7 @@ export default function HeroSection() {
             </motion.p>
 
             <motion.p
-              style={{
-                fontSize: "1.2rem",
-                fontWeight: "lighter",
-                marginTop: "20px",
-                maxWidth: "600px",
-                textAlign: "center",
-                letterSpacing: "1px",
-                lineHeight: "1.6",
-                textShadow: "1px 1px 6px rgba(0, 0, 0, 0.5)",
-              }}
+              className="text-base font-light mt-5 max-w-[90%] text-center leading-relaxed sm:text-sm md:text-base lg:text-lg"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{
@@ -140,19 +90,7 @@ export default function HeroSection() {
 
             <Link to={image.buttonLink}>
               <motion.div
-                style={{
-                  backgroundColor: "#000000", // Black background
-                  padding: "12px 30px",
-                  borderRadius: "10px", // Unified border radius
-                  fontSize: "1.2rem",
-                  fontWeight: "bold",
-                  color: "#ffffff", // White text
-                  marginTop: "20px",
-                  textDecoration: "none",
-                  textTransform: "uppercase",
-                  boxShadow: "2px 2px 10px rgba(0, 0, 0, 0.4)",
-                  cursor: "pointer",
-                }}
+                className="mt-6 px-6 py-3 bg-black text-white font-bold text-sm rounded-lg shadow-lg cursor-pointer transform hover:bg-gray-800 sm:px-4 sm:py-2 md:px-6 md:py-3 lg:px-8 lg:py-4"
                 whileHover={{ backgroundColor: "#333333" }}
                 transition={{ duration: 0.3 }}
               >
@@ -165,3 +103,5 @@ export default function HeroSection() {
     </motion.div>
   );
 }
+
+  

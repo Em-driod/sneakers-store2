@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import "./Cartitem.css";
+import "./Cartitem.css"; // We'll still need this for framer-motion's animation styles.
 
 const Cartitem = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -30,13 +30,13 @@ const Cartitem = () => {
   }, [cards.length]);
 
   return (
-    <div className="main-container">
-      <h2 className="heading">Our Ethos</h2>
+    <div className="bg-gray-100 py-16 px-4 text-center">
+      <h2 className="text-4xl font-bold mb-12">Our Ethos</h2>
 
-      <div className="cards-container">
+      <div className="flex justify-center gap-6 relative">
         {/* First card slides down */}
         <motion.div
-          className="card"
+          className="bg-black text-white p-10 rounded-2xl shadow-xl w-full max-w-[500px] flex flex-col gap-6"
           key={`card-${currentIndex}`}
           initial={{ y: -200, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -44,17 +44,17 @@ const Cartitem = () => {
           transition={{ duration: 1 }}
         >
           {cards[currentIndex].items.map((item, index) => (
-            <div key={index} className="card-item">
-              <img src={item.src} alt={item.details} />
-              <h3>{item.details}</h3>
-              <p>{item.price}</p>
+            <div key={index} className="flex flex-col items-center gap-5">
+              <img src={item.src} alt={item.details} className="w-full h-64 object-cover rounded-xl" />
+              <h3 className="text-2xl font-bold">{item.details}</h3>
+              <p className="text-xl">{item.price}</p>
             </div>
           ))}
         </motion.div>
 
         {/* Second card slides in from the side */}
         <motion.div
-          className="card"
+          className="bg-black text-white p-10 rounded-2xl shadow-xl w-full max-w-[500px] flex flex-col gap-6"
           key={`card-${(currentIndex + 1) % cards.length}`}
           initial={{ x: 200, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
@@ -62,10 +62,10 @@ const Cartitem = () => {
           transition={{ duration: 1 }}
         >
           {cards[(currentIndex + 1) % cards.length].items.map((item, index) => (
-            <div key={index} className="card-item">
-              <img src={item.src} alt={item.details} />
-              <h3>{item.details}</h3>
-              <p>{item.price}</p>
+            <div key={index} className="flex flex-col items-center gap-5">
+              <img src={item.src} alt={item.details} className="w-full h-64 object-cover rounded-xl" />
+              <h3 className="text-2xl font-bold">{item.details}</h3>
+              <p className="text-xl">{item.price}</p>
             </div>
           ))}
         </motion.div>
@@ -75,6 +75,4 @@ const Cartitem = () => {
 };
 
 export default Cartitem;
-
-
 
