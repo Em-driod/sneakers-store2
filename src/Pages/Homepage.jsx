@@ -9,7 +9,7 @@ import Popular from '../Components/Popular'
 
 const Homepage = () => {
   return (
-    <div>
+    <div className='bg-black'>
       <Herosection/>
       <Sliding/>
       <Cartitem/>

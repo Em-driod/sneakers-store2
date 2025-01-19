@@ -1,7 +1,92 @@
+/* Scroll container */  
+.scroll-container {  
+  display: flex;  
+  flex-direction: column;  
+  position: relative;  
+  animation-duration: 20s; /* Slower speed */  
+  animation-timing-function: ease-in-out;  
+  animation-iteration-count: infinite;  
+  height: 10%; /* Take up the full height */  
+}  
 
-  .motion-div {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+/* Scroll up animation */  
+.scroll-up {  
+  animation-name: smooth-scroll-up;  
+}  
+
+/* Keyframes for smooth-scroll-up */  
+@keyframes smooth-scroll-up {  
+  0% {  
+    transform: translateY(0);  
+  }  
+  33.33% {  
+    transform: translateY(-33.33%);  
+  }  
+  66.66% {  
+    transform: translateY(66.66%);  
+  }  
+  100% {  
+    transform: translateY(0);  
+  }  
+}  
+
+/* Scroll down animation */  
+.scroll-down {  
+  animation-name: smooth-scroll-down;  
+}  
+
+/* Keyframes for smooth-scroll-down */  
+@keyframes smooth-scroll-down {  
+  0% {  
+    transform: translateY(0);  
+  }  
+  33.33% {  
+    transform: translateY(33.33%);  
+  }  
+  66.66% {  
+    transform: translateY(-66.66%);  
+  }  
+  100% {  
+    transform: translateY(0);  
+  }  
+}  
+
+/* Item card */  
+.item-card {  
+  text-align: center;  
+  flex: 1 0 auto; /* Make each item take up equal space */  
+  height: 100vh; /* Full screen height for each item */  
+  display: flex;  
+  flex-direction: column;  
+  justify-content: center;  
+  align-items: center;  
+  margin: 0; /* No space between items */  
+}  
+
+/* Image styling */  
+.item-card img {  
+  width: 100%;  
+  height: 70vh;  
+  object-fit: cover; /* Ensure the image covers the space properly */  
+  transition: transform 0.1s ease-in-out;  
+}  
+
+.item-card:hover img {  
+  transform: scale(1.05);  
+}
+
+/* Remove gap and adjust styles for phone screens */
+@media (max-width: 640px) { /* Target screens with a max width of 640px (e.g., phones) */
+  .flex {
+    gap: 0; /* Remove the gap between cards */
   }
 
+  .item-card img {
+    height: 40vh; /* Reduce the height of images */
+    width: 100%; /* Increase the width of images */
+  }
+
+  .item-card {
+    padding: 0; /* Ensure no extra padding affects spacing */
+  }
+}
