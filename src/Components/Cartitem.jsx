@@ -1,26 +1,65 @@
 import React, { useState, useEffect } from "react";  
-import "./Cartitem.css"; // Add the CSS for animations  
+import "./Cartitem.css";  
 
 const Cartitem = () => {  
   const [currentIndex, setCurrentIndex] = useState(0);  
-
   const cards = [  
     {  
       id: 1,  
       items: [  
-        { src: "public/Screenshot 2025-01-12 074638.png", details: "Stylish Men's Sneakers", price: "$120.00" },  
-        { src: "public/pexels-chuck-3261069.jpg", details: "Classic Leather Shoes", price: "$200.00" },  
-        { src: "public/pexels-shema-yves-527584815-30144320.jpg", details: "Elegant Formal Shoes", price: "$150.00" },  
-        { src: "public/pexels-frank-k-895836-1863357.jpg", details: "Extra Item for Smooth Transition", price: "$0.00" },  
+        {  
+          src: "public/karsten-winegeart-H_mNZS_9qC8-unsplash.jpg",  
+          details: "Stylish men’s sneakers for comfort.",  
+          price: "$120.00",  
+          availability: "In Stock",  
+        },  
+        {  
+          src: "public/matthew-hamilton-pO2bglTMJpo-unsplash.jpg",  
+          details: "Classic leather shoes for elegance.",  
+          price: "$200.00",  
+          availability: "Limited Stock",  
+        },  
+        {  
+          src: "public/max-anderson-0fv6PAfj4p4-unsplash.jpg",  
+          details: "Elegant shoes for formal wear.",  
+          price: "$150.00",  
+          availability: "In Stock",  
+        },  
+        {  
+          src: "public/nayris-aquino-lxMkTxNPpxs-unsplash.jpg",  
+          details: "Versatile extra item for convenience.",  
+          price: "$0.00",  
+          availability: "Free with Purchase",  
+        },  
       ],  
     },  
     {  
       id: 2,  
       items: [  
-        { src: "public/pexels-frank-k-895836-1863357.jpg", details: "Casual Loafers", price: "$80.00" },  
-        { src: "public/pexels-mnzoutfits-1598505.jpg", details: "Sporty Running Shoes", price: "$150.00" },  
-        { src: "public/pexels-godisable-jacob-226636.jpg", details: "Trendy Sneakers", price: "$100.00" },  
-        { src: "public/pexels-chuck-3261069.jpg", details: "Extra Item for Smooth Transition", price: "$0.00" },  
+        {  
+          src: "public/riley-edwards-6kmNVeslMW8-unsplash.jpg",  
+          details: "Casual loafers for relaxed outings.",  
+          price: "$80.00",  
+          availability: "In Stock",  
+        },  
+        {  
+          src: "public/wengang-zhai-_fOL6ebfECQ-unsplash.jpg",  
+          details: "Sporty shoes for active lifestyle.",  
+          price: "$150.00",  
+          availability: "In Stock",  
+        },  
+        {  
+          src: "public/xavier-teo-SxAXphIPWeg-unsplash (1).jpg",  
+          details: "Trendy sneakers with stylish design.",  
+          price: "$100.00",  
+          availability: "Limited Stock",  
+        },  
+        {  
+          src: "public/malvestida-Rp-viEAP8Bo-unsplash.jpg",  
+          details: "Free item for shoe collection.",  
+          price: "$0.00",  
+          availability: "Free with Purchase",  
+        },  
       ],  
     },  
   ];  
@@ -28,23 +67,24 @@ const Cartitem = () => {
   useEffect(() => {  
     const interval = setInterval(() => {  
       setCurrentIndex((prevIndex) => (prevIndex + 1) % cards.length);  
-    }, 15000); // Slower animation speed (15 seconds)  
+    }, 15000);  
     return () => clearInterval(interval);  
   }, [cards.length]);  
 
   return (  
     <div className="bg-black py-4 px-4 text-center">  
-      <h2 className="text-4xl font-bold mb-12">Our Ethos</h2>  
+      <h2 className="text-4xl font-bold mb-12 text-white">Our Ethos</h2>  
 
       <div className="flex justify-center gap-6">  
         {/* First Card */}  
-        <div className="w-full max-w-[500px] bg-black text-white  rounded-2xl shadow-xl overflow-hidden">  
+        <div className="w-full max-w-[500px] bg-black text-white rounded-2xl shadow-xl overflow-hidden">  
           <div className="scroll-container scroll-up">  
             {cards[currentIndex].items.slice(0, 2).map((item, index) => (  
               <div key={index} className="item-card">  
                 <img src={item.src} alt={item.details} className="w-full h-64 object-cover rounded-xl" />  
                 <h3 className="text-2xl font-bold mt-4">{item.details}</h3>  
-                <p className="text-xl">{item.price}</p>  
+                <p className="text-xl mt-2">{item.price}</p>  
+                <p className="text-lg mt-2">{item.availability}</p>  {/* Added spacing here */}  
               </div>  
             ))}  
           </div>  
@@ -57,7 +97,8 @@ const Cartitem = () => {
               <div key={index} className="item-card">  
                 <img src={item.src} alt={item.details} className="w-full h-64 object-cover rounded-xl" />  
                 <h3 className="text-2xl font-bold mt-4">{item.details}</h3>  
-                <p className="text-xl">{item.price}</p>  
+                <p className="text-xl mt-2">{item.price}</p>  
+                <p className="text-lg mt-2">{item.availability}</p>  {/* Added spacing here */}  
               </div>  
             ))}  
           </div>  
