@@ -1,162 +1,94 @@
-// src/Pages/Shop.jsx  
 import React, { useState } from "react";  
 import { motion } from "framer-motion";  
-import { useCart } from '../CartContext'; // Adjusted import path  
+import { useCart } from "../CartContext";  
 
 const Shop = () => {  
     const { addToCart, getItemCount } = useCart();  
     const [notification, setNotification] = useState(false);  
-    const cartItemCount = getItemCount(); // Get the current cart item count  
-
-    const styles = {  
-        container: {  
-            padding: "6rem",  
-            maxWidth: "1200px",  
-            margin: "0 auto",  
-        },  
-        hero: {  
-            textAlign: "center",  
-            marginBottom: "2rem",  
-        },  
-        heroHeading: {  
-            fontSize: "2rem",  
-            fontWeight: "bold",  
-            color: "#333",  
-        },  
-        filterBar: {  
-            display: "flex",  
-            justifyContent: "center",  
-            marginBottom: "1.5rem",  
-        },  
-        filterButton: {  
-            padding: "0.5rem 1rem",  
-            margin: "0 0.5rem",  
-            border: "none",  
-            borderRadius: "4px",  
-            backgroundColor: "#f0f0f0",  
-            cursor: "pointer",  
-        },  
-        grid: {  
-            display: "grid",  
-            gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",  
-            gap: "1rem",  
-        },  
-        card: {  
-            border: "1px solid #ddd",  
-            borderRadius: "8px",  
-            padding: "1rem",  
-            textAlign: "center",  
-            transition: "transform 0.2s",  
-        },  
-        image: {  
-            width: "100%",  
-            height: "auto",  
-            borderRadius: "4px",  
-        },  
-        content: {  
-            padding: "0.5rem 0",  
-        },  
-        title: {  
-            fontSize: "1.2rem",  
-            fontWeight: "bold",  
-            color: "#333",  
-        },  
-        price: {  
-            fontSize: "1rem",  
-            color: "#555",  
-            margin: "0.5rem 0",  
-        },  
-        button: {  
-            padding: "0.5rem 1rem",  
-            borderRadius: "4px",  
-            backgroundColor: "#007bff",  
-            color: "#fff",  
-            border: "none",  
-            cursor: "pointer",  
-            transition: "background-color 0.3s ease",  
-        },  
-        notification: {  
-            position: "fixed",  
-            top: "20px",  
-            right: "20px",  
-            backgroundColor: "#28a745",  
-            color: "#fff",  
-            padding: "10px 20px",  
-            borderRadius: "5px",  
-            opacity: 0.9,  
-            transition: "opacity 0.5s ease",  
-            zIndex: 1000,  
-        },  
-    };  
+    const [filter, setFilter] = useState("All");  
+    const cartItemCount = getItemCount();  
 
     const sneakers = [  
-        { id: 1, name: "Air Jordan 1", price: "$120", image: "https://via.placeholder.com/250" },  
-        { id: 2, name: "Nike Air Max", price: "$140", image: "https://via.placeholder.com/250" },  
-        { id: 3, name: "Adidas Yeezy", price: "$220", image: "https://via.placeholder.com/250" },  
-        { id: 4, name: "Puma Classic", price: "$80", image: "https://via.placeholder.com/250" },  
-        { id: 5, name: "New Balance 550", price: "$100", image: "https://via.placeholder.com/250" },  
-        { id: 6, name: "Converse Chuck", price: "$60", image: "https://via.placeholder.com/250" },  
+        { id: 1, name: "Air Jordan 1", price: "$120", category: "Men", image: "/airforce.png" },  
+        { id: 6, name: "Converse Chuck", price: "$60", category: "Women", image: "/imani-bahati-LxVxPA1LOVM-unsplash.jpg" },  
+        { id: 3, name: "Adidas Yeezy", price: "$220", category: "Men", image: "/pair-trainers.jpg" },  
+        { id: 4, name: "Puma Classic", price: "$80", category: "Kids", image: "/shoes (1).jpg" },  
+        { id: 5, name: "New Balance 550", price: "$100", category: "Women", image: "/close-up-futuristic-sneakers-urban-setting.jpg" },  
+        { id: 2, name: "Nike Air Max", price: "$140", category: "Men", image: "/nike welk.png" },   
+        { id: 7, name: "Nike Air Max", price: "$140", category: "Kid", image: "/domino-studio-164_6wVEHfI-unsplash.jpg" },  
+        { id: 8, name: "Nike Air Max", price: "$140", category: "Kid", image: "/fitvilla.png" },   
     ];  
 
     const handleAddToCart = (sneaker) => {  
-        addToCart(sneaker); // Add sneaker to cart  
-        setNotification(true); // Show notification  
+        addToCart(sneaker);  
+        setNotification(true);  
 
-        // Hide notification after 3 seconds  
         setTimeout(() => {  
             setNotification(false);  
         }, 3000);  
     };  
 
+    const filteredSneakers =  
+        filter === "All" ? sneakers : sneakers.filter((sneaker) => sneaker.category === filter);  
+
     return (  
-        <div style={styles.container}>  
+        <div className="sm:p-8 max-w-5xl mx-auto bg-white text-black">  
             {notification && (  
-                <div style={styles.notification}>  
+                <div className="fixed top-5 right-5 bg-green-500 text-white py-2 px-4 rounded-lg z-50">  
                     Item added to cart! ({cartItemCount})  
                 </div>  
             )}  
 
             <motion.div  
-                style={styles.hero}  
+                className="text-center mb-8"  
                 initial={{ opacity: 0, y: -50 }}  
                 animate={{ opacity: 1, y: 0 }}  
                 transition={{ duration: 0.8 }}  
             >  
-                <h1 style={styles.heroHeading}>Shop the Latest Sneakers</h1>  
-                <p>Find the perfect pair for every occasion.</p>  
+                <h1 className="text-3xl font-bold">Shop the Latest Sneakers</h1>  
+                <p className="mt-2">Find the perfect pair for every occasion.</p>  
             </motion.div>  
 
-            <div style={styles.filterBar}>  
-                {["All", "Men's Sneakers", "Women's Sneakers", "Kids"].map((filter) => (  
+            <div className="flex justify-center mb-6 space-x-4">  
+                {["All", "Men", "Women", "Kids"].map((category) => (  
                     <motion.button  
-                        key={filter}  
-                        style={styles.filterButton}  
-                        whileHover={{ backgroundColor: "#007bff", color: "#fff" }}  
+                        key={category}  
+                        className={`py-2 px-4 rounded-lg transition ${  
+                            filter === category  
+                                ? "bg-blue-500 text-white"  
+                                : "bg-gray-700 text-white hover:bg-blue-500"  
+                        }`}  
+                        onClick={() => setFilter(category)}  
+                        whileHover={{ scale: 1.05 }}  
                     >  
-                        {filter}  
+                        {category}  
                     </motion.button>  
                 ))}  
             </div>  
 
-            <div style={styles.grid}>  
-                {sneakers.map((sneaker) => (  
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">  
+                {filteredSneakers.map((sneaker) => (  
                     <motion.div  
                         key={sneaker.id}  
-                        style={styles.card}  
+                        className="flex flex-col border border-gray-200 rounded-lg p-4 text-center shadow-lg transition hover:shadow-xl"  
                         whileHover={{ scale: 1.05 }}  
                     >  
-                        <img src={sneaker.image} alt={sneaker.name} style={styles.image} />  
-                        <div style={styles.content}>  
-                            <h2 style={styles.title}>{sneaker.name}</h2>  
-                            <p style={styles.price}>{sneaker.price}</p>  
-                            <motion.button  
-                                style={styles.button}  
-                                whileHover={{ backgroundColor: "#0056b3" }}  
-                                onClick={() => handleAddToCart(sneaker)} // Use the new handler  
-                            >  
-                                Add to Cart  
-                            </motion.button>  
+                        <img  
+                            src={sneaker.image}  
+                            alt={sneaker.name}  
+                            className="w-full h-auto rounded-md mb-4"  
+                        />  
+                        <div className="flex-grow">  
+                            <h2 className="text-lg font-bold">{sneaker.name}</h2>  
+                            <p className="mt-2">{sneaker.price}</p>  
                         </div>  
+                        <motion.button  
+                            className="mt-4 py-2 px-4 bg-black text-white rounded-lg hover:bg-blue-700 transition"  
+                            whileHover={{ scale: 1.1 }}  
+                            onClick={() => handleAddToCart(sneaker)}  
+                        >  
+                            Add to Cart  
+                        </motion.button>  
                     </motion.div>  
                 ))}  
             </div>  

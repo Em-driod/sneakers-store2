@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-gray-200 py-12 px-4 overflow-hidden">
+    <footer className="bg-black text-gray-200 py-12 px-4 overflow-hidden">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
         {/* Company Info */}
         <div>

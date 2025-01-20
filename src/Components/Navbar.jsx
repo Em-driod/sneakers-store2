@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";  
 import { Link } from "react-router-dom";  
 import { useCart } from "../CartContext";  
-import { FaBars } from "react-icons/fa";  
+import { FaBars, FaAngleDown, FaAngleRight } from "react-icons/fa";  
 
 export default function TopNavBar() {  
   const { getItemCount } = useCart();  
@@ -108,8 +108,18 @@ export default function TopNavBar() {
               Shop Now  
             </Link>  
           </motion.button>  
+
+          {/* Arrow Icon for Menu Toggle on Mobile Screen */}  
+          {menuOpen && (  
+            <motion.div  
+              className="absolute top-16 right-6 text-2xl text-gray-700"  
+              whileHover={{ scale: 1.2 }}  
+            >  
+              <FaAngleRight />  
+            </motion.div>  
+          )}  
         </motion.ul>  
       </motion.nav>  
     </>  
   );  
-}
+}  

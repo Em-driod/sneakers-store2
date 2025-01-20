@@ -3,11 +3,11 @@ import { motion } from "framer-motion";
 
 // Array of box data with descriptions  
 const boxes = [  
-  { id: 1, img: "/airforce.png", text: "Sneaker Style 1", description: "This sneaker combines style and comfort for everyday wear.", style: { color: "white", fontWeight: "bold" } },  
-  { id: 2, img: "/retro xx.png", text: "Air Jordan Mid", description: "A classic design that never goes out of style.", style: { color: "white", fontStyle: "italic" } },  
-  { id: 3, img: "/ADFWD.png", text: "ADFWD", description: "Engineered for performance, this shoe is perfect for athletes.", style: { color: "white", textDecoration: "underline" } },  
-  { id: 4, img: "/fitvilla.png", text: "Sneaker Style 4", description: "A trendy option for those who want to stand out.", style: { color: "white", fontSize: "20px" } },  
-  { id: 5, img: "/retro xx.png", text: "Sneaker Style 5", description: "Combining retro vibes with modern comfort.", style: { color: "white", textTransform: "uppercase" } },  
+  { id: 1, img: "/sport-shoes-running.jpg", text: "Sneaker Style 1", description: "This sneaker combines style and comfort for everyday wear.", style: { color: "white", fontWeight: "bold" } },  
+  { id: 2, img: "/shoes.jpg", text: "Air Jordan Mid", description: "A classic design that never goes out of style.", style: { color: "white", fontStyle: "italic" } },  
+  { id: 3, img: "/wengang-zhai-_fOL6ebfECQ-unsplash.jpg", text: "ADFWD", description: "Engineered for performance, this shoe is perfect for athletes.", style: { color: "white", textDecoration: "underline" } },  
+  { id: 4, img: "/pair-trainers.jpg", text: "Sneaker Style 4", description: "A trendy option for those who want to stand out.", style: { color: "white", fontSize: "20px" } },  
+  { id: 5, img: "/one-black-sneaker-shoe-isolated-white.jpg", text: "Sneaker Style 5", description: "Combining retro vibes with modern comfort.", style: { color: "white", textTransform: "uppercase" } },  
   { id: 6, img: "/Jordan retro 10.png", text: "Sneaker Style 6", description: "Designed for the court, perfect for street style.", style: { color: "white", letterSpacing: "2px" } },  
   { id: 7, img: "/nike welk.png", text: "Sneaker Style 7", description: "A versatile sneaker that fits any occasion.", style: { color: "white", fontWeight: "600" } },  
   { id: 8, img: "/public/fitvilla.png", text: "Sneaker Style 8", description: "Stylish and comfortable, ideal for all-day wear.", style: { color: "white", fontStyle: "italic" } },  
