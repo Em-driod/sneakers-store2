@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 export default function HeroSection() {
-  const images = [
+  const images = [ 
     {
       src: "/pexels-adrian-dorobantu-989175-2300334.jpg",
       alt: "Sneaker 1",

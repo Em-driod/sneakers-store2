@@ -8,25 +8,25 @@ const Cartitem = () => {
       id: 1,  
       items: [  
         {  
-          src: "public/karsten-winegeart-H_mNZS_9qC8-unsplash.jpg",  
+          src: "/karsten-winegeart-H_mNZS_9qC8-unsplash.jpg",  
           details: "Stylish men’s sneakers for comfort.",  
           price: "$120.00",  
           availability: "In Stock",  
         },  
         {  
-          src: "public/matthew-hamilton-pO2bglTMJpo-unsplash.jpg",  
+          src: "/matthew-hamilton-pO2bglTMJpo-unsplash.jpg",  
           details: "Classic leather shoes for elegance.",  
           price: "$200.00",  
           availability: "Limited Stock",  
         },  
         {  
-          src: "public/max-anderson-0fv6PAfj4p4-unsplash.jpg",  
+          src: "/max-anderson-0fv6PAfj4p4-unsplash.jpg",  
           details: "Elegant shoes for formal wear.",  
           price: "$150.00",  
           availability: "In Stock",  
         },  
         {  
-          src: "public/nayris-aquino-lxMkTxNPpxs-unsplash.jpg",  
+          src: "/nayris-aquino-lxMkTxNPpxs-unsplash.jpg",  
           details: "Versatile extra item for convenience.",  
           price: "$0.00",  
           availability: "Free with Purchase",  
@@ -37,7 +37,7 @@ const Cartitem = () => {
       id: 2,  
       items: [  
         {  
-          src: "public/riley-edwards-6kmNVeslMW8-unsplash.jpg",  
+          src: "/riley-edwards-6kmNVeslMW8-unsplash.jpg",  
           details: "Casual loafers for relaxed outings.",  
           price: "$80.00",  
           availability: "In Stock",  
@@ -49,13 +49,13 @@ const Cartitem = () => {
           availability: "In Stock",  
         },  
         {  
-          src: "public/xavier-teo-SxAXphIPWeg-unsplash (1).jpg",  
+          src: "/xavier-teo-SxAXphIPWeg-unsplash (1).jpg",  
           details: "Trendy sneakers with stylish design.",  
           price: "$100.00",  
           availability: "Limited Stock",  
         },  
         {  
-          src: "public/malvestida-Rp-viEAP8Bo-unsplash.jpg",  
+          src: "/malvestida-Rp-viEAP8Bo-unsplash.jpg",  
           details: "Free item for shoe collection.",  
           price: "$0.00",  
           availability: "Free with Purchase",  
